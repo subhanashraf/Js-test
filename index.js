@@ -1,3 +1,5 @@
+
+//  i am solve first 8 qustion 
 // question 1
 // Sum of Even Numbers: Write a function that takes an array of numbers
 //  and returns the sum of all even numbers in the array.
@@ -169,12 +171,50 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  i am not solve question 1 and 9 and 10
+
+
 //////////////////////////
 // question 1
 // Implement `debounce` Function
 //  function  debounce(fun,delay) {
+//   console.log(fun);
 //    setTimeout(() => {
-//        return  fun;
+//     return ()=>{fun}
+       
 //    }, delay);
 // }
 
@@ -186,12 +226,14 @@
 // 2. Deep Copy of Nested Objects and Arrays
 
 // function deepClone(original) {
-//     console.log(original);
-    
+//    return original    
 // }
 
 // const original = { a: 1, b: { c: 2, d: [3, 4] } };
+// console.log(original);
+
 // const copy = deepClone(original);
+// copy.a =2
 // console.log(copy);
 
 
@@ -227,42 +269,103 @@
 // question 4
 // 4. Custom `Promise.all` Implementation
 // function customPromiseAll(params) {
-//     console.log(params);
-//     return params;
-// }
+//      return params.map((element)=>{
+//         return element.then((e)=>e)
+//      })
+//     }
+  
 // const p1 = Promise.resolve(1);
 // const p2 = Promise.resolve(2);
 // const p3 = Promise.resolve(3);
-// customPromiseAll([p1, p2, p3]).then((resolve)=>{
-//     console.log(resolve);
-    
-// }); 
+// let value =customPromiseAll([p1, p2, p3])
+// value.forEach(element => {
+//   element.then((e)=>{console.log(e);
+//   })
+  
+// });
 
+// question 5 
+// 5. Throttling Function
+// function throttle(delay,fun) {
+//   let time = delay *1000
+//   setTimeout(() => {
+//    console.log('hello');
+//     if (fun) {
+//       fun()
+//     }
+//   }, time);
+// }
+// throttle(2,()=>{throttle(2)})
 
 // Section 2: Algorithmic Challenges
 // 6. Find Duplicates in an Array
-function findDuplicates(arr) {
-    const count = {};
-    const double = [];
+// function findDuplicates(arr) {
+//     const count = {};
+//     const double = [];
   
-    arr.forEach((num) => {
-      if (!count[num]) {
-        count[num] = 1;
-      } else {
-        count[num]++;
-      }
-    });
+//     arr.forEach((num) => {
+//       if (!count[num]) {
+//         count[num] = 1;
+//       } else {
+//         count[num]++;
+//       }
+//     });
   
-    for (const num in count) {
-      if (count[num] > 1) {
-        double.push(Number(num));
-      }
-    }
+//     for (const num in count) {
+//       if (count[num] > 1) {
+//         double.push(Number(num));
+//       }
+//     }
   
-    return double;
-  }
+//     return double;
+//   }
   
-  // Example usage:
-  console.log(findDuplicates([1, 2, 3, 4, 3, 2, 5,5])); // Output: [2, 3]
+//   // Example usage:
+//   console.log(findDuplicates([1, 2, 3, 4, 3, 2, 5,5])); // Output: [2, 3]
 
+
+// 7. Implement `mergeSortedArrays`
+// function mergeSortedArrays(num1,num2) {
+//   let merge = num1.concat(num2)
+//   let order= merge.sort()
+//   return order;
+// }
+
+// // Example usage:
+// console.log(mergeSortedArrays([1, 3, 5], [2, 4, 6])); // Output: [1, 2, 3, 4, 5, 6]
+
+// 8. Check for Palindrome Permutation
+// function canFormPalindrome(str) {
+//   let chect = str;
+//   return chect == chect.split('').reverse().join('');
+// }
+
+// // Example usage:
+// console.log(canFormPalindrome('civic')); // Output: true
+// console.log(canFormPalindrome('madam')); // Output: true
+// console.log(canFormPalindrome('hello')); // Output: false
+
+// 9. Simulate API Calls with Random Delays
+// function simulateApiCalls(urls) {
+//   const delay = Math.floor((Math.random()*3)*1000)
+//   console.log(delay);
+  
+//  return Promise.all(
+
+//   urls.map(async (element)=>{
+//       const respone =await fetch(element);
+//       const data  = await respone.json();
+//       if (respone.status == 200) {
+//         return data
+//       } else {
+        
+//       } 
+//   })
+//  )
+  
+// }
+
+// const urls = ['https://jsonplaceholder.typicode.com/users', 'https://jsonplaceholder.typicode.com/todos', 'https://jsonplaceholder.typicode.com/photos'];
+// simulateApiCalls(urls).then((e)=>{console.log(e);}).catch((error)=>{console.log(error);
+// })
 
